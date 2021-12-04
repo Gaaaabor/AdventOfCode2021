@@ -33,7 +33,7 @@ namespace AdventOfCode2021.ConsoleApp
                 .ReadAllLines("Day3\\Report.txt")
                 .ToArray();
 
-            var consumption = PowerOMeter.Calculate(report);
+            var consumption = PowerOMeter.Calculate2(report);
 
             var result = consumption.GammaRate * consumption.EpsionRate;
             Console.WriteLine($"Consumption: {result}");
