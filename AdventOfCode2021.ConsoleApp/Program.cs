@@ -1,6 +1,7 @@
 ﻿using AdventOfCode2021.ConsoleApp.Day1;
 using AdventOfCode2021.ConsoleApp.Day2;
 using AdventOfCode2021.ConsoleApp.Day3;
+using AdventOfCode2021.ConsoleApp.Day4;
 using System;
 using System.IO;
 using System.Linq;
@@ -29,14 +30,22 @@ namespace AdventOfCode2021.ConsoleApp
             //Console.WriteLine($"Coordinate: {result}");
             //Console.ReadKey();
 
-            var report = File
-                .ReadAllLines("Day3\\Report.txt")
+            //var report = File
+            //    .ReadAllLines("Day3\\Report.txt")
+            //    .ToArray();
+
+            //var consumption = PowerOMeter.Calculate2(report);
+
+            //var result = consumption.GammaRate * consumption.EpsionRate;
+            //Console.WriteLine($"Consumption: {result}");
+            //Console.ReadKey();
+
+            var bingoSource = File
+                .ReadAllLines("Day4\\Bingo.txt")
                 .ToArray();
 
-            var consumption = PowerOMeter.Calculate2(report);
-
-            var result = consumption.GammaRate * consumption.EpsionRate;
-            Console.WriteLine($"Consumption: {result}");
+            var score = BingOMatic.GetMyWinningScoreLast(bingoSource);            
+            Console.WriteLine($"My bingo score: {score}");
             Console.ReadKey();
         }
     }
