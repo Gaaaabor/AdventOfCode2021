@@ -2,6 +2,7 @@
 using AdventOfCode2021.ConsoleApp.Day2;
 using AdventOfCode2021.ConsoleApp.Day3;
 using AdventOfCode2021.ConsoleApp.Day4;
+using AdventOfCode2021.ConsoleApp.Day5;
 using System;
 using System.IO;
 using System.Linq;
@@ -40,12 +41,20 @@ namespace AdventOfCode2021.ConsoleApp
             //Console.WriteLine($"Consumption: {result}");
             //Console.ReadKey();
 
-            var bingoSource = File
-                .ReadAllLines("Day4\\Bingo.txt")
+            //var bingoSource = File
+            //    .ReadAllLines("Day4\\Bingo.txt")
+            //    .ToArray();
+
+            //var score = BingOMatic.GetMyWinningScoreLast(bingoSource);
+            //Console.WriteLine($"My bingo score: {score}");
+            //Console.ReadKey();
+
+            var ventSource = File
+                .ReadAllLines("Day5\\Vents.txt")
                 .ToArray();
 
-            var score = BingOMatic.GetMyWinningScoreLast(bingoSource);            
-            Console.WriteLine($"My bingo score: {score}");
+            var intersections = ThermalVentOMatic.GetVentIntersections(ventSource);
+            Console.WriteLine($"Intersections: {intersections}");
             Console.ReadKey();
         }
     }
