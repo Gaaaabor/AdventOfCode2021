@@ -3,6 +3,7 @@ using AdventOfCode2021.ConsoleApp.Day2;
 using AdventOfCode2021.ConsoleApp.Day3;
 using AdventOfCode2021.ConsoleApp.Day4;
 using AdventOfCode2021.ConsoleApp.Day5;
+using AdventOfCode2021.ConsoleApp.Day6;
 using System;
 using System.IO;
 using System.Linq;
@@ -49,12 +50,21 @@ namespace AdventOfCode2021.ConsoleApp
             //Console.WriteLine($"My bingo score: {score}");
             //Console.ReadKey();
 
-            var ventSource = File
-                .ReadAllLines("Day5\\Vents.txt")
+            //var ventSource = File
+            //    .ReadAllLines("Day5\\Vents.txt")
+            //    .ToArray();
+
+            //var intersections = ThermalVentOMatic.GetVentIntersections(ventSource);
+            //Console.WriteLine($"Intersections: {intersections}");
+            //Console.ReadKey();
+
+            var fishReport = File
+                .ReadAllLines("Day6\\FishReport.txt")
                 .ToArray();
 
-            var intersections = ThermalVentOMatic.GetVentIntersections(ventSource);
-            Console.WriteLine($"Intersections: {intersections}");
+            var days = 256;
+            var population = LanterFishOMatic.MeasurePopulation(fishReport, days);
+            Console.WriteLine($"Population after {days}: {population}");
             Console.ReadKey();
         }
     }
