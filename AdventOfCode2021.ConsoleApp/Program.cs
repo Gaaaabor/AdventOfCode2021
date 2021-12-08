@@ -4,6 +4,7 @@ using AdventOfCode2021.ConsoleApp.Day3;
 using AdventOfCode2021.ConsoleApp.Day4;
 using AdventOfCode2021.ConsoleApp.Day5;
 using AdventOfCode2021.ConsoleApp.Day6;
+using AdventOfCode2021.ConsoleApp.Day7;
 using System;
 using System.IO;
 using System.Linq;
@@ -58,13 +59,23 @@ namespace AdventOfCode2021.ConsoleApp
             //Console.WriteLine($"Intersections: {intersections}");
             //Console.ReadKey();
 
-            var fishReport = File
-                .ReadAllLines("Day6\\FishReport.txt")
+            //var fishReport = File
+            //    .ReadAllLines("Day6\\FishReport.txt")
+            //    .ToArray();
+
+            //var days = 256;
+            //var population = LanterFishOMatic.MeasurePopulation(fishReport, days);
+            //Console.WriteLine($"Population after {days}: {population}");
+            //Console.ReadKey();
+
+            var crabFleetPositions = File
+                .ReadAllText("Day7\\CrabFleetPositions.txt")
+                .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse)
                 .ToArray();
 
-            var days = 256;
-            var population = LanterFishOMatic.MeasurePopulation(fishReport, days);
-            Console.WriteLine($"Population after {days}: {population}");
+            var optimalFuelConsumption = CrabFleetOMatic.GetOptimalFuelConsumption2(crabFleetPositions);
+            Console.WriteLine($"Optimal fuel consumption: {optimalFuelConsumption}");
             Console.ReadKey();
         }
     }
