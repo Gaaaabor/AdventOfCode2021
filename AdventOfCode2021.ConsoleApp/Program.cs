@@ -5,6 +5,7 @@ using AdventOfCode2021.ConsoleApp.Day4;
 using AdventOfCode2021.ConsoleApp.Day5;
 using AdventOfCode2021.ConsoleApp.Day6;
 using AdventOfCode2021.ConsoleApp.Day7;
+using AdventOfCode2021.ConsoleApp.Day8;
 using System;
 using System.IO;
 using System.Linq;
@@ -68,14 +69,22 @@ namespace AdventOfCode2021.ConsoleApp
             //Console.WriteLine($"Population after {days}: {population}");
             //Console.ReadKey();
 
-            var crabFleetPositions = File
-                .ReadAllText("Day7\\CrabFleetPositions.txt")
-                .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                .Select(int.Parse)
+            //var crabFleetPositions = File
+            //    .ReadAllText("Day7\\CrabFleetPositions.txt")
+            //    .Split(",", StringSplitOptions.RemoveEmptyEntries)
+            //    .Select(int.Parse)
+            //    .ToArray();
+
+            //var optimalFuelConsumption = CrabFleetOMatic.GetOptimalFuelConsumption2(crabFleetPositions);
+            //Console.WriteLine($"Optimal fuel consumption: {optimalFuelConsumption}");
+            //Console.ReadKey();
+
+            var segmentSource = File
+                .ReadAllLines("Day8\\SegmentSource.txt")
                 .ToArray();
 
-            var optimalFuelConsumption = CrabFleetOMatic.GetOptimalFuelConsumption2(crabFleetPositions);
-            Console.WriteLine($"Optimal fuel consumption: {optimalFuelConsumption}");
+            var digitCount = SegmentOMatic.CountDigitsLastFour(segmentSource);
+            Console.WriteLine($"Count of 1,4,7 and 8 digits: {digitCount}");
             Console.ReadKey();
         }
     }
