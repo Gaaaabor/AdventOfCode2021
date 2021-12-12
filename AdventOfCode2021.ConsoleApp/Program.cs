@@ -83,7 +83,7 @@ namespace AdventOfCode2021.ConsoleApp
                 .ReadAllLines("Day8\\SegmentSource.txt")
                 .ToArray();
 
-            var digitCount = SegmentOMatic.CountDigitsLastFour(segmentSource);
+            var digitCount = SegmentOMatic.CountDigitsFull(segmentSource);
             Console.WriteLine($"Count of 1,4,7 and 8 digits: {digitCount}");
             Console.ReadKey();
         }
