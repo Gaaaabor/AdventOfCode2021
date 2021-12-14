@@ -6,6 +6,7 @@ using AdventOfCode2021.ConsoleApp.Day5;
 using AdventOfCode2021.ConsoleApp.Day6;
 using AdventOfCode2021.ConsoleApp.Day7;
 using AdventOfCode2021.ConsoleApp.Day8;
+using AdventOfCode2021.ConsoleApp.Day9;
 using System;
 using System.IO;
 using System.Linq;
@@ -79,12 +80,20 @@ namespace AdventOfCode2021.ConsoleApp
             //Console.WriteLine($"Optimal fuel consumption: {optimalFuelConsumption}");
             //Console.ReadKey();
 
-            var segmentSource = File
-                .ReadAllLines("Day8\\SegmentSource.txt")
+            //var segmentSource = File
+            //    .ReadAllLines("Day8\\SegmentSource.txt")
+            //    .ToArray();
+
+            //var digitCount = SegmentOMatic.CountDigitsFull(segmentSource);
+            //Console.WriteLine($"Count of 1,4,7 and 8 digits: {digitCount}");
+            //Console.ReadKey();
+
+            var lavaTubeSource = File
+                .ReadAllLines("Day9\\LavaTubeSource.txt")
                 .ToArray();
 
-            var digitCount = SegmentOMatic.CountDigitsFull(segmentSource);
-            Console.WriteLine($"Count of 1,4,7 and 8 digits: {digitCount}");
+            var risk = SmokeBasinOMatic.LargestBasinSize(lavaTubeSource);
+            Console.WriteLine($"Total risk of low points: {risk}");
             Console.ReadKey();
         }
     }
