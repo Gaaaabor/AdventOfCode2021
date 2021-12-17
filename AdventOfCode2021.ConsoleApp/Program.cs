@@ -1,5 +1,6 @@
 ﻿using AdventOfCode2021.ConsoleApp.Day1;
 using AdventOfCode2021.ConsoleApp.Day10;
+using AdventOfCode2021.ConsoleApp.Day11;
 using AdventOfCode2021.ConsoleApp.Day2;
 using AdventOfCode2021.ConsoleApp.Day3;
 using AdventOfCode2021.ConsoleApp.Day4;
@@ -97,12 +98,20 @@ namespace AdventOfCode2021.ConsoleApp
             //Console.WriteLine($"Largest basin: {largestBasin}");
             //Console.ReadKey();
 
-            var chunkSource = File
-                .ReadAllLines("Day10\\ChunkSource.txt")
+            //var chunkSource = File
+            //    .ReadAllLines("Day10\\ChunkSource.txt")
+            //    .ToArray();
+
+            //var completionMiddleScore = ChunkOMatic.CalculateCompletionMiddleScore(chunkSource);
+            //Console.WriteLine($"Completion middle score: {completionMiddleScore}");
+            //Console.ReadKey();
+
+            var octopusSource = File
+                .ReadAllLines("Day11\\OctopusSource.txt")
                 .ToArray();
 
-            var completionMiddleScore = ChunkOMatic.CalculateCompletionMiddleScore(chunkSource);
-            Console.WriteLine($"Completion middle score: {completionMiddleScore}");
+            var flashCount = FlashOMatic.GetNumberOfFlashesAfter100Steps(octopusSource);
+            Console.WriteLine($"Flash count: {flashCount}");
             Console.ReadKey();
         }
     }
