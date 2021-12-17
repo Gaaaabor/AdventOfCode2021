@@ -1,4 +1,5 @@
 ﻿using AdventOfCode2021.ConsoleApp.Day1;
+using AdventOfCode2021.ConsoleApp.Day10;
 using AdventOfCode2021.ConsoleApp.Day2;
 using AdventOfCode2021.ConsoleApp.Day3;
 using AdventOfCode2021.ConsoleApp.Day4;
@@ -88,12 +89,20 @@ namespace AdventOfCode2021.ConsoleApp
             //Console.WriteLine($"Count of 1,4,7 and 8 digits: {digitCount}");
             //Console.ReadKey();
 
-            var lavaTubeSource = File
-                .ReadAllLines("Day9\\LavaTubeSource.txt")
+            //var lavaTubeSource = File
+            //    .ReadAllLines("Day9\\LavaTubeSource.txt")
+            //    .ToArray();
+
+            //var largestBasin = SmokeBasinOMatic.LargestBasinSize(lavaTubeSource);
+            //Console.WriteLine($"Largest basin: {largestBasin}");
+            //Console.ReadKey();
+
+            var chunkSource = File
+                .ReadAllLines("Day10\\ChunkSource.txt")
                 .ToArray();
 
-            var risk = SmokeBasinOMatic.LargestBasinSize(lavaTubeSource);
-            Console.WriteLine($"Total risk of low points: {risk}");
+            var completionMiddleScore = ChunkOMatic.CalculateCompletionMiddleScore(chunkSource);
+            Console.WriteLine($"Completion middle score: {completionMiddleScore}");
             Console.ReadKey();
         }
     }
