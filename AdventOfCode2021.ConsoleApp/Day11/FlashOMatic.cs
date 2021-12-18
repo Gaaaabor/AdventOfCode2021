@@ -18,6 +18,22 @@ namespace AdventOfCode2021.ConsoleApp.Day11
             return flashes;
         }
 
+        internal static int GetCycleCountOfMegaFlash(string[] octopusSource)
+        {
+            var octopusMatrix = MapOctopuses(octopusSource);
+
+            var steps = 0;
+            while (true)
+            {
+                steps++;
+                var flashes = CountFlashes(octopusMatrix);
+                if (flashes == 100)
+                {
+                    return steps;
+                }
+            }
+        }
+
         private static FlashyOctopus[,] MapOctopuses(string[] octopusSource)
         {
             var matrix = new FlashyOctopus[octopusSource.Length, octopusSource[0].Length];

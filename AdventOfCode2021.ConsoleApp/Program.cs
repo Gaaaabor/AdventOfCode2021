@@ -110,8 +110,8 @@ namespace AdventOfCode2021.ConsoleApp
                 .ReadAllLines("Day11\\OctopusSource.txt")
                 .ToArray();
 
-            var flashCount = FlashOMatic.GetNumberOfFlashesAfter100Steps(octopusSource);
-            Console.WriteLine($"Flash count: {flashCount}");
+            var stepCount = FlashOMatic.GetCycleCountOfMegaFlash(octopusSource);
+            Console.WriteLine($"Step count for megaflash: {stepCount}");
             Console.ReadKey();
         }
     }
